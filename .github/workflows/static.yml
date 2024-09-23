@@ -1,19 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross Country Meet Results</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div>
-        <h1>Welcome to the Home Page! Meet Results Below!</h1>
-        <ul>
-            <li><a href="Early_Bird.html">37th Early Bird Open Mens 5000 Meters HS Open 5K</a></li>
-            <li><a href="Holly_Duane.html">56th Holly-Duane Raffin Festival of Races Mens 5000 Meters</a></li>
-            <li><a href="Bret_Clements.html">Bret Clements Bath Invitational Mens 5000 Meters</a></li>
-        </ul>
-    </div>
-</body>
-</html>
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
