@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>56th Holly-Duane Raffin Festival of Races</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1f2e;
+            --secondary-color: #2563eb;
+            --background-color: #0f172a;
+            --text-color: #ffffff;
+            --border-color: #334155;
+            --highlight-color: #1e293b;
+            --card-background: #1e40af;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--primary-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .nav-button {
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .meet-details {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .meet-details h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .search-bar::placeholder {
+            color: #94a3b8;
+        }
+
+        .results-container {
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            overflow: hidden;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background-color: var(--primary-color);
+        }
+
+        .results-count {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Custom scrollbar */
+        .results-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .results-container::-webkit-scrollbar-track {
+            background: var(--primary-color);
+        }
+
+        .results-container::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            td, th {
+                padding: 0.75rem;
+            }
+        }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        section h2 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>56th Holly-Duane Raffin Festival of Races</h1>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="early-bird.html" class="nav-button">Early Bird</a>
+            <a href="bath-invitational.html" class="nav-button">Bath Invitational</a>
+            <a href="holly-duane.html" class="nav-button active">Holly-Duane</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="meet-details">
+            <h2>Meet Details</h2>
+            <p>Date: Sat Sep 14 2024</p>
+            <p>Location: Holly-Duane Course</p>
+            <p>Total Teams: 24</p>
+            <p>Total Runners: 157</p>
+        </div>
+
+        <input type="text" class="search-bar" id="searchInput" 
+               placeholder="Search by name or school..." 
+               aria-label="Search by name or school">
+        <div id="searchResults" class="results-count"></div>
+
+        <section>
+            <h2>Team Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Team</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamResults">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Individual Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Time</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody id="individualResults">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const teamResults = [
+            {place: 1, team: "Holly", score: 79},
+            {place: 2, team: "Canton", score: 133},
+            {place: 3, team: "Midland", score: 145},
+            {place: 4, team: "Oxford", score: 148},
+            {place: 5, team: "Plymouth", score: 169},
+            {place: 6, team: "Salem", score: 201},
+            {place: 7, team: "Lake Orion", score: 213},
+            {place: 8, team: "Troy", score: 215},
+            {place: 9, team: "Howell", score: 218},
+            {place: 10, team: "Dexter", score: 243},
+            {place: 11, team: "Davison", score: 293},
+            {place: 12, team: "Midland Dow", score: 309},
+            {place: 13, team: "Ann Arbor Skyline", score: 349},
+            {place: 14, team: "Detroit Catholic Central", score: 353},
+            {place: 15, team: "Utica Eisenhower", score: 358},
+            {place: 16, team: "Romeo", score: 431},
+            {place: 17, team: "Rochester Adams", score: 437},
+            {place: 18, team: "Hartland", score: 460},
+            {place: 19, team: "New Baltimore Anchor Bay", score: 472},
+            {place: 20, team: "Utica Ford", score: 483},
+            {place: 21, team: "Livonia Stevenson", score: 508},
+            {place: 22, team: "Grand Blanc", score: 552},
+            {place: 23, team: "Clinton Twp. Chippewa Valley", score: 564},
+            {place: 24, team: "Troy Athens", score: 680}
+        ];
+
+        const individualResults = [
+    {place: 1, name: "Jack MacGregor", grade: 10, time: "15:41.2", team: "Howell"},
+    {place: 2, name: "Aiden Pengelly", grade: 11, time: "15:45.8", team: "Canton"},
+    {place: 3, name: "Kian Schneeweis", grade: 12, time: "15:56.6", team: "Troy"},
+    {place: 4, name: "Alexander McArthur", grade: 12, time: "16:03.0", team: "Oxford"},
+    {place: 5, name: "Julian Linebaugh", grade: 12, time: "16:08.7", team: "Dexter"},
+    {place: 6, name: "James Cusick", grade: 12, time: "16:14.1", team: "Oxford"},
+    {place: 7, name: "Max Houvener", grade: 11, time: "16:23.5", team: "Lake Orion"},
+    {place: 8, name: "Lucas Wood", grade: 12, time: "16:23.8", team: "Howell"},
+    {place: 9, name: "Lucas LaPointe", grade: 11, time: "16:29.9", team: "Plymouth"},
+    {place: 10, name: "Caleb Snyder", grade: 12, time: "16:33.6", team: "Dexter"},
+    {place: 11, name: "Andrew Worsley", grade: 11, time: "16:41.0", team: "Midland"},
+    {place: 12, name: "Clark Madden", grade: 12, time: "16:45.1", team: "Canton"},
+    {place: 13, name: "Steven Dusseau", grade: 11, time: "16:45.4", team: "Canton"},
+    {place: 14, name: "Ben Clark", grade: 12, time: "16:46.4", team: "Canton"},
+    {place: 15, name: "Ben Mussen", grade: 12, time: "16:48.9", team: "Plymouth"},
+    {place: 16, name: "Jack Chadwick", grade: 12, time: "16:50.7", team: "Plymouth"},
+    {place: 17, name: "James Brickel", grade: 11, time: "16:52.2", team: "Romeo"},
+    {place: 18, name: "Logan Bellinger", grade: 11, time: "16:54.0", team: "Midland"},
+    {place: 19, name: "Raymond Lucero II", grade: 12, time: "16:55.4", team: "Lake Orion"},
+    {place: 20, name: "Jack Hanner", grade: 10, time: "16:56.8", team: "Salem"},
+    {place: 21, name: "Austin Mercado", grade: 10, time: "16:57.5", team: "Salem"},
+    {place: 22, name: "Anthony Frei", grade: 11, time: "17:00.0", team: "Utica Eisenhower"},
+    {place: 23, name: "Drake Wallace", grade: 12, time: "17:01.3", team: "Howell"},
+    {place: 24, name: "Cameron Cochran", grade: 10, time: "17:01.7", team: "Midland"},
+    {place: 25, name: "Luke Meyer", grade: 12, time: "17:07.2", team: "Davison"},
+    {place: 26, name: "Colden Gray", grade: 12, time: "17:17.1", team: "Utica Eisenhower"},
+    {place: 27, name: "Isaac Demetter", grade: 12, time: "17:18.2", team: "Salem"},
+    {place: 28, name: "Henry Witt", grade: 10, time: "17:22.5", team: "Troy"},
+    {place: 29, name: "Leyton Minuth", grade: 12, time: "17:22.6", team: "Midland Dow"},
+    {place: 30, name: "Eric DeWaele", grade: 11, time: "17:23.2", team: "Clinton Twp. Chippewa Valley"}
+        ];
+
+        // Populate tables
+        function populateTables() {
+            const teamTable = document.getElementById('teamResults');
+            const individualTable = document.getElementById('individualResults');
+
+            teamResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.team}</td>
+                    <td><span class="team-score">${result.score}</span></td>
+                `;
+                teamTable.appendChild(row);
+            });
+
+            individualResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.name}</td>
+                    <td>${result.grade}</td>
+                    <td>${result.time}</td>
+                    <td>${result.team}</td>
+                `;
+                individualTable.appendChild(row);
+            });
+        }
+
+        // Enhanced search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const isVisible = text.includes(searchTerm);
+                row.style.display = isVisible ? '' : 'none';
+                if (isVisible) visibleCount++;
+            });
+
+            // Update search results count
+            const searchResults = document.getElementById('searchResults');
+            if (searchTerm) {
+                searchResults.textContent = `Found ${visibleCount} matching results`;
+            } else {
+                searchResults.textContent = '';
+            }
+        });
+
+        // Initialize the page
+        populateTables();
+    </script>
+</body>
+</html>
