@@ -3,219 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "css/reset.css">
-    <link rel = "stylesheet" href = "css/style.css">
-    <title>37th Early Bird Open Mens 5000 Meters HS Open 5K Country Meet</title>
+    <title>37th Early Bird Open</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1f2e;
+            --secondary-color: #2563eb;
+            --background-color: #0f172a;
+            --text-color: #ffffff;
+            --border-color: #334155;
+            --highlight-color: #1e293b;
+            --card-background: #1e40af;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--primary-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .nav-button {
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .meet-details {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .meet-details h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .search-bar::placeholder {
+            color: #94a3b8;
+        }
+
+        .results-container {
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            overflow: hidden;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background-color: var(--primary-color);
+        }
+
+        .results-count {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Custom scrollbar */
+        .results-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .results-container::-webkit-scrollbar-track {
+            background: var(--primary-color);
+        }
+
+        .results-container::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            td, th {
+                padding: 0.75rem;
+            }
+        }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        section h2 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>37th Early Bird Open Mens 5000 Meters HS Open 5K</h1>
-        <h2>Thu Aug 29 2024</h2>
+        <h1>37th Early Bird Open</h1>
+        <div class="nav-buttons">
+            <a href="early-bird.html" class="nav-button active">Early Bird</a>
+            <a href="bath-invitational.html" class="nav-button">Bath Invitational</a>
+            <a href="holly-duane.html" class="nav-button">Holly-Duane</a>
+        </div>
     </header>
-    <!-- Section for overall team results -->
-    <section id="team-results">
-        <h2>Overall Team Results</h2>
-        <p><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367">Team results are available here.</a></p>
-    </section>
 
-    <!-- Section for Team Placements -->
-    <section id="team-placements">
-        <h2>Team Placements</h2>
-        <table id="team-table">
-            <thead>
-                <tr>
-                    <th>Placement</th>
-                    <th>Team Name</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Holly</td>
-                    <td>79</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Canton</td>
-                    <td>133</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Midland</td>
-                    <td>145</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Oxford</td>
-                    <td>148</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Plymouth</td>
-                    <td>169</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Salem</td>
-                    <td>201</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Lake Orion</td>
-                    <td>213</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Troy</td>
-                    <td>215</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Howell</td>
-                    <td>218</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Dexter</td>
-                    <td>243</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>Davison</td>
-                    <td>293</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>Midland Dow</td>
-                    <td>309</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>Ann Arbor Skyline</td>
-                    <td>349</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>Detroit Catholic Central</td>
-                    <td>353</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>Utica Eisenhower</td>
-                    <td>358</td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>Romeo</td>
-                    <td>431</td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td>Rochester Adams</td>
-                    <td>437</td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>Hartland</td>
-                    <td>460</td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td>New Baltimore Anchor Bay</td>
-                    <td>472</td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td>Utica Ford</td>
-                    <td>483</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>Livonia Stevenson</td>
-                    <td>508</td>
-                </tr>
-                <tr>
-                    <td>22</td>
-                    <td>Grand Blanc</td>
-                    <td>552</td>
-                </tr>
-                <tr>
-                    <td>23</td>
-                    <td>Clinton Twp. Chippewa Valley</td>
-                    <td>564</td>
-                </tr>
-                <tr>
-                    <td>24</td>
-                    <td>Troy Athens</td>
-                    <td>680</td>
-                </tr>
+    <main class="container">
+        <div class="meet-details">
+            <h2>Meet Details</h2>
+            <p>Date: Thu Aug 29 2024</p>
+            <p>Location: Early Bird Course</p>
+            <p>Total Teams: 18</p>
+            <p>Total Runners: 303</p>
+        </div>
 
-            </tbody>
-            </table>
-    </section>
-    <!-- Section for Top Athletes -->
-    <section id="Top-Athletes">
-        <h2>Top 5 Athletes</h2>
-        <table id="athlete-table">
-        <thead>
-        <tr>
-            <th>Placement</th>
-            <th>Grade</th>
-            <th>Athlete Name</th>
-            <th>Athlete Link</th>
-            <th>Time</th>
-            <th>School Name</th>
-            <th>Team Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>10</td>
-            <td>Jack MacGregor</td>
-            <td><a href="https://www.athletic.net/athlete/17456114/cross-country">Link</a></td>
-            <td>15:41.2</td>
-            <td>Howell</td>
-            <td><a href="https://www.athletic.net/athlete/17456114/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>11</td>
-            <td>Aiden Pengelly</td>
-            <td><a href="https://www.athletic.net/athlete/21144396/cross-country">Link</a></td>
-            <td>15:45.8</td>
-            <td>Canton</td>
-            <td><a href="https://www.athletic.net/athlete/21144396/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>12</td>
-            <td>Kian Schneeweis</td>
-            <td><a href="https://www.athletic.net/athlete/19825394/cross-country">Link</a></td>
-            <td>15:56.6</td>
-            <td>Troy</td>
-            <td><a href="https://www.athletic.net/athlete/19825394/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>12</td>
-            <td>Alexander McArthur</td>
-            <td><a href="https://www.athletic.net/athlete/22186133/cross-country">Link</a></td>
-            <td>16:03.0</td>
-            <td>Oxford</td>
-            <td><a href="https://www.athletic.net/athlete/22186133/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>12</td>
-            <td>Julian Linebaugh</td>
-            <td><a href="https://www.athletic.net/athlete/17349252/cross-country">Link</a></td>
-            <td>16:08.7</td>
-            <td>Dexter</td>
-            <td><a href="https://www.athletic.net/athlete/17349252/cross-country">Link</a></td>
-        </tr>
-        </tbody>
-        </table>
-    </section>
-    
+        <input type="text" class="search-bar" id="searchInput" 
+               placeholder="Search by name or school..." 
+               aria-label="Search by name or school">
+        <div id="searchResults" class="results-count"></div>
+
+        <section>
+            <h2>Team Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Team</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamResults">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Individual Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Time</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody id="individualResults">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const teamResults = [
+            {place: 1, team: "Livonia Churchill", score: 95},
+            {place: 2, team: "Ann Arbor Pioneer", score: 126},
+            {place: 3, team: "White Lake Lakeland", score: 127},
+            {place: 4, team: "Plymouth", score: 134},
+            {place: 5, team: "Ann Arbor Huron", score: 164},
+            {place: 6, team: "Romeo", score: 186},
+            {place: 7, team: "Ann Arbor Skyline", score: 244},
+            {place: 8, team: "Grand Blanc", score: 247},
+            {place: 9, team: "Mason", score: 280},
+            {place: 10, team: "South Lyon", score: 291},
+            {place: 11, team: "South Lyon East", score: 318},
+            {place: 12, team: "Fenton", score: 327},
+            {place: 13, team: "Fraser", score: 346},
+            {place: 14, team: "Whitmore Lake", score: 467},
+            {place: 15, team: "Waterford Kettering", score: 477},
+            {place: 16, team: "North Farmington", score: 504},
+            {place: 17, team: "Ypsilanti Community", score: 546},
+            {place: 18, team: "Waterford Mott", score: 551}
+        ];
+
+        const individualResults = [
+    {place: 1, name: "Beckett Crooks", grade: 11, time: "16:11.20", team: "Ann Arbor Pioneer"},
+    {place: 2, name: "Alex Doneth", grade: 12, time: "16:29.10", team: "Mason"},
+    {place: 3, name: "Chase Wolters", grade: 12, time: "16:30.00", team: "Livonia Churchill"},
+    {place: 4, name: "Joseph Rohmfeld", grade: 12, time: "16:35.20", team: "Livonia Churchill"},
+    {place: 5, name: "Malcolm Speigle", grade: 12, time: "16:41.40", team: "Livonia Churchill"},
+    {place: 6, name: "Jack Chadwick", grade: 12, time: "16:43.80", team: "Plymouth"},
+    {place: 7, name: "Walker Brose", grade: 12, time: "16:50.10", team: "Ann Arbor Huron"},
+    {place: 8, name: "Lucas LaPointe", grade: 11, time: "16:51.80", team: "Plymouth"},
+    {place: 9, name: "Landen Livingston", grade: 11, time: "16:58.50", team: "Whitmore Lake"},
+    {place: 10, name: "Gavin Katic", grade: 9, time: "17:01.50", team: "Fenton"},
+    {place: 11, name: "Conner McCormick", grade: 12, time: "17:02.90", team: "Mason"},
+    {place: 12, name: "Matthew Verellen", grade: 12, time: "17:04.20", team: "White Lake Lakeland"},
+    {place: 13, name: "Theo Sacks-Thomas", grade: 11, time: "17:04.80", team: "Ann Arbor Pioneer"},
+    {place: 14, name: "Jonah Kraft", grade: 12, time: "17:05.70", team: "Ann Arbor Huron"},
+    {place: 15, name: "Owen Perry", grade: 11, time: "17:05.80", team: "Romeo"},
+    {place: 16, name: "Jacob Kosidlo", grade: 12, time: "17:11.40", team: "White Lake Lakeland"},
+    {place: 17, name: "Ben Mussen", grade: 12, time: "17:15.90", team: "Plymouth"},
+    {place: 18, name: "Luke Allen", grade: 11, time: "17:21.00", team: "Romeo"},
+    {place: 19, name: "Quinn Davis", grade: 11, time: "17:21.80", team: "Ann Arbor Pioneer"},
+    {place: 20, name: "Aiden Baugh", grade: 12, time: "17:28.00", team: "Waterford Kettering"},
+    {place: 21, name: "Jacob Mack", grade: 12, time: "17:32.70", team: "South Lyon East"},
+    {place: 22, name: "Lance Edghill", grade: 11, time: "17:34.20", team: "Fraser"},
+    {place: 23, name: "Matthew Guikema", grade: 10, time: "17:35.10", team: "Ann Arbor Skyline"},
+    {place: 24, name: "Maxwell Merrill", grade: 12, time: "17:36.70", team: "Grand Blanc"},
+    {place: 25, name: "Jamal (Max) Samaha", grade: 11, time: "17:39.30", team: "Ann Arbor Huron"},
+    {place: 26, name: "Thomas DeJesus", grade: 11, time: "17:41.40", team: "Ann Arbor Pioneer"},
+    {place: 27, name: "Teo Condevaux", grade: 12, time: "17:44.30", team: "Livonia Churchill"},
+    {place: 28, name: "Nicholas Yuan", grade: 10, time: "17:44.40", team: "Ann Arbor Skyline"},
+    {place: 29, name: "Nikhil Ball", grade: 9, time: "17:47.20", team: "South Lyon East"},
+    {place: 30, name: "Gavin Johns", grade: 11, time: "17:48.60", team: "White Lake Lakeland"},
+    {place: 31, name: "Brenden Humitz", grade: 11, time: "17:51.40", team: "White Lake Lakeland"},
+    {place: 32, name: "Francisco (Xisco) Dura", grade: 11, time: "17:52.80", team: "Ann Arbor Huron"},
+    {place: 33, name: "Hudson Wojtkowicz", grade: 11, time: "17:52.90", team: "Livonia Churchill"},
+    {place: 34, name: "Ethan Morche", grade: 12, time: "17:57.80", team: "Livonia Churchill"},
+    {place: 35, name: "Brody Empson", grade: 10, time: "17:59.60", team: "Romeo"},
+    {place: 36, name: "Walker Ledbetter", grade: 10, time: "18:00.30", team: "Ann Arbor Pioneer"},
+    {place: 37, name: "Michael Nivala", grade: 12, time: "18:02.10", team: "White Lake Lakeland"},
+    {place: 38, name: "Charlie Smith", grade: 11, time: "18:03.60", team: "Grand Blanc"},
+    {place: 39, name: "Tyler Bjorklund", grade: 10, time: "18:07.30", team: "Livonia Churchill"},
+    {place: 40, name: "Zeke Lafferty", grade: 11, time: "18:07.30", team: "Ann Arbor Skyline"},
+    {place: 41, name: "Joey Brake", grade: 11, time: "18:07.40", team: "Livonia Churchill"},
+    {place: 42, name: "Liam Wyman", grade: 12, time: "18:10.60", team: "South Lyon"},
+    {place: 43, name: "Daniel Niehaus", grade: 11, time: "18:11.70", team: "Plymouth"},
+    {place: 44, name: "Alex Hamilton", grade: 11, time: "18:14.60", team: "North Farmington"},
+    {place: 45, name: "Carson Hlavin", grade: 10, time: "18:15.20", team: "Romeo"},
+    {place: 46, name: "William Dean", grade: 11, time: "18:21.20", team: "Grand Blanc"},
+    {place: 47, name: "Jack Robichaud", grade: 12, time: "18:23.70", team: "Ann Arbor Skyline"},
+    {place: 48, name: "Aidan Grazioli", grade: 12, time: "18:25.90", team: "South Lyon"},
+    {place: 49, name: "Colin Courage", grade: 10, time: "18:27.00", team: "Ann Arbor Pioneer"},
+    {place: 50, name: "Gustaf Finn", grade: 11, time: "18:28.20", team: "Ann Arbor Skyline"},
+];
+
+        function populateTables() {
+            const teamTable = document.getElementById('teamResults');
+            const individualTable = document.getElementById('individualResults');
+
+            teamResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.team}</td>
+                    <td><span class="team-score">${result.score}</span></td>
+                `;
+                teamTable.appendChild(row);
+            });
+
+            individualResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.name}</td>
+                    <td>${result.grade}</td>
+                    <td>${result.time}</td>
+                    <td>${result.team}</td>
+                `;
+                individualTable.appendChild(row);
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const isVisible = text.includes(searchTerm);
+                row.style.display = isVisible ? '' : 'none';
+                if (isVisible) visibleCount++;
+            });
+
+            const searchResults = document.getElementById('searchResults');
+            if (searchTerm) {
+                searchResults.textContent = `Found ${visibleCount} matching results`;
+            } else {
+                searchResults.textContent = '';
+            }
+        });
+
+        populateTables();
+    </script>
+</body>
+</html>
