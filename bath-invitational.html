@@ -3,154 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "css/reset.css">
-    <link rel = "stylesheet" href = "css/style.css">
-    <title>Bret Clements Bath Invitational Mens 5000 Meters Class 1 Country Meet</title>
+    <title>Bret Clements Bath Invitational</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1f2e;
+            --secondary-color: #2563eb;
+            --background-color: #0f172a;
+            --text-color: #ffffff;
+            --border-color: #334155;
+            --highlight-color: #1e293b;
+            --card-background: #1e40af;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--primary-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .nav-button {
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .meet-details {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .meet-details h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .search-bar::placeholder {
+            color: #94a3b8;
+        }
+
+        .results-container {
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            background-color: var(--highlight-color);
+            overflow: hidden;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background-color: var(--primary-color);
+        }
+
+        .results-count {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .results-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .results-container::-webkit-scrollbar-track {
+            background: var(--primary-color);
+        }
+
+        .results-container::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            td, th {
+                padding: 0.75rem;
+            }
+        }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        section h2 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bret Clements Bath Invitational Mens 5000 Meters Class 1</h1>
-        <h2>Sat Sep 7 2024</h2>
+        <h1>Bret Clements Bath Invitational</h1>
+        <div class="nav-buttons">
+            <a href="early-bird.html" class="nav-button">Early Bird</a>
+            <a href="bath-invitational.html" class="nav-button active">Bath Invitational</a>
+            <a href="holly-duane.html" class="nav-button">Holly-Duane</a>
+        </div>
     </header>
-    <!-- Section for overall team results -->
-    <section id="team-results">
-        <h2>Overall Team Results</h2>
-        <p><a href="https://www.athletic.net/CrossCountry/meet/236875/results/947077">Team results are available here.</a></p>
-    </section>
 
-    <!-- Section for Team Placements -->
-    <section id="team-placements">
-        <h2>Team Placements</h2>
-        <table id="team-table">
-        <thead>
-            <tr>
-                <th>Placement</th>
-                <th>Team Name</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Chuck Block Timing</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Northville</td>
-                <td>62</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Saline</td>
-                <td>105</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Okemos</td>
-                <td>147</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Ann Arbor Skyline</td>
-                <td>152</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Ann Arbor Huron</td>
-                <td>157</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>DeWitt</td>
-                <td>182</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Holly</td>
-                <td>209</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Fenton</td>
-                <td>232</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>East Lansing</td>
-                <td>249</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Flushing</td>
-                <td>327</td>
-            </tr>
-        </tbody>
-        </table>
-    </section>
-    
-    <!-- Section for Top Athlete Placements -->
-    <section id="athlete-placements">
-        <h2>Top 5 Athletes</h2>
-        <table id="athletes-table">
-        <thead>
-            <tr>
-            <th>Placement</th>
-            <th>Grade</th>
-            <th>Athlete Name</th>
-            <th>Athlete Link</th>
-            <th>Time</th>
-            <th>Team Name</th>
-            <th>Team Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>12</td>
-            <td>Ethan Powell</td>
-            <td><a href="https://www.athletic.net/athlete/17514447/cross-country">Link</a></td>
-            <td>15:55.20</td>
-            <td>Northville</td>
-            <td><a href="https://www.athletic.net/athlete/17514447/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>11</td>
-            <td>Ben Hartigan</td>
-            <td><a href="https://www.athletic.net/athlete/21351035/cross-country">Link</a></td>
-            <td>16:11.63</td>
-            <td>Northville</td>
-            <td><a href="https://www.athletic.net/athlete/21351035/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>11</td>
-            <td>Ian Morgan</td>
-            <td><a href="https://www.athletic.net/athlete/20362252/cross-country">Link</a></td>
-            <td>16:17.20</td>
-            <td>Okemos</td>
-            <td><a href="https://www.athletic.net/athlete/20362252/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>10</td>
-            <td>Brandon Cloud</td>
-            <td><a href="https://www.athletic.net/athlete/18566554/cross-country">Link</a></td>
-            <td>16:18.07</td>
-            <td>Northville</td>
-            <td><a href="https://www.athletic.net/athlete/18566554/cross-country">Link</a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>12</td>
-            <td>Theodore Davis</td>
-            <td><a href="https://www.athletic.net/athlete/16019015/cross-country">Link</a></td>
-            <td>16:21.37</td>
-            <td>Dansville</td>
-            <td><a href="https://www.athletic.net/athlete/16019015/cross-country">Link</a></td>
-        </tr>
-        </tbody>
-        </table>
+    <main class="container">
+        <div class="meet-details">
+            <h2>Meet Details</h2>
+            <p>Date: Sat Sep 7 2024</p>
+            <p>Location: Bath High School</p>
+            <p>Total Teams: 11</p>
+            <p>Total Runners: 96</p>
+        </div>
+
+        <input type="text" class="search-bar" id="searchInput" 
+               placeholder="Search by name or school..." 
+               aria-label="Search by name or school">
+        <div id="searchResults" class="results-count"></div>
+
+        <section>
+            <h2>Team Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Team</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamResults">
+                    </tbody>
+                </table>
+            </div>
         </section>
-    
+
+        <section>
+            <h2>Individual Results</h2>
+            <div class="results-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Time</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody id="individualResults">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const teamResults = [
+            {place: 1, team: "Chuck Block Timing", score: 20},
+            {place: 2, team: "Northville", score: 62},
+            {place: 3, team: "Saline", score: 105},
+            {place: 4, team: "Okemos", score: 147},
+            {place: 5, team: "Ann Arbor Skyline", score: 152},
+            {place: 6, team: "Ann Arbor Huron", score: 157},
+            {place: 7, team: "DeWitt", score: 182},
+            {place: 8, team: "Holly", score: 209},
+            {place: 9, team: "Fenton", score: 232},
+            {place: 10, team: "East Lansing", score: 249},
+            {place: 11, team: "Flushing", score: 327}
+        ];
+
+        const individualResults = [
+    {place: 1, name: "Ethan Powell", grade: 12, time: "15:55.20", team: "Northville"},
+    {place: 2, name: "Ben Hartigan", grade: 11, time: "16:11.63", team: "Northville"},
+    {place: 3, name: "Ian Morgan", grade: 11, time: "16:17.20", team: "Okemos"},
+    {place: 4, name: "Brandon Cloud", grade: 10, time: "16:18.07", team: "Northville"},
+    {place: 5, name: "Theodore Davis", grade: 12, time: "16:21.37", team: "Dansville"},
+    {place: 6, name: "Ishaan Kundapur", grade: 12, time: "16:28.87", team: "Northville"},
+    {place: 7, name: "Jacob Szalay", grade: 10, time: "16:29.57", team: "Saline"},
+    {place: 8, name: "James Latstetter", grade: 12, time: "16:31.90", team: "Flushing"},
+    {place: 9, name: "Ethan Hertza", grade: 11, time: "16:32.76", team: "Northville"},
+    {place: 10, name: "Walker Brose", grade: 12, time: "16:35.78", team: "Ann Arbor Huron"},
+    {place: 11, name: "Gavin Katic", grade: 9, time: "16:37.12", team: "Fenton"},
+    {place: 12, name: "Saman Meshinchi", grade: 12, time: "16:39.36", team: "Saline"},
+    {place: 13, name: "Nick Barretto", grade: 12, time: "16:41.92", team: "Northville"},
+    {place: 14, name: "Ryan Stojov", grade: 11, time: "16:46.26", team: "Northville"},
+    {place: 15, name: "Wesley Rogan", grade: 9, time: "16:47.51", team: "Saline"},
+    {place: 16, name: "John (Jack) Klein", grade: 10, time: "16:48.46", team: "Saline"},
+    {place: 17, name: "Brennan LaRusso", grade: 11, time: "16:51.36", team: "Saline"},
+    {place: 18, name: "Collin Eckermann", grade: 12, time: "16:55.86", team: "Saline"},
+    {place: 19, name: "Nathan Beemer", grade: 12, time: "16:57.21", team: "Okemos"},
+    {place: 20, name: "Nolan Inglis", grade: 12, time: "16:58.01", team: "DeWitt"},
+    {place: 21, name: "Liam Preisser", grade: 11, time: "16:58.28", team: "East Lansing"},
+    {place: 22, name: "Jonah Kraft", grade: 12, time: "17:06.71", team: "Ann Arbor Huron"},
+    {place: 23, name: "Ritvik Ellendula", grade: 12, time: "17:07.72", team: "Northville"},
+    {place: 24, name: "Bruno Cifaldi", grade: 11, time: "17:07.73", team: "Ann Arbor Skyline"},
+    {place: 25, name: "Simon Shutt", grade: 10, time: "17:09.05", team: "Okemos"},
+    {place: 26, name: "Malcolm Cesario", grade: 11, time: "17:09.94", team: "Okemos"},
+    {place: 27, name: "Nicholas Yuan", grade: 10, time: "17:13.08", team: "Ann Arbor Skyline"},
+    {place: 28, name: "Broden Ladd", grade: 10, time: "17:14.69", team: "Holly"},
+    {place: 29, name: "Jack Robichaud", grade: 12, time: "17:14.90", team: "Ann Arbor Skyline"},
+    {place: 30, name: "Trevor Murphy", grade: 10, time: "17:18.93", team: "Holly"},
+    {place: 31, name: "Jacob Cole", grade: 10, time: "17:20.01", team: "Saline"},
+    {place: 32, name: "Carlos Basulto", grade: 10, time: "17:20.72", team: "Saline"},
+    {place: 33, name: "Jackson Walthorn", grade: 12, time: "17:21.92", team: "DeWitt"},
+    {place: 34, name: "Jack Lewis", grade: 10, time: "17:23.95", team: "Northville"},
+    {place: 35, name: "Colton Blackburn", grade: 11, time: "17:28.73", team: "Northville"},
+    {place: 36, name: "Francisco (Xisco) Dura", grade: 11, time: "17:35.78", team: "Ann Arbor Huron"},
+    {place: 37, name: "Cole Heikka", grade: 9, time: "17:40.11", team: "Holly"},
+    {place: 38, name: "Kyle Krasan", grade: 11, time: "17:43.36", team: "Ann Arbor Skyline"},
+    {place: 39, name: "Mason Raborn", grade: 10, time: "17:44.44", team: "DeWitt"},
+    {place: 40, name: "Gerard Gilmore", grade: 9, time: "17:45.20", team: "Fenton"},
+    {place: 41, name: "Joshua Carpenter", grade: 11, time: "17:46.96", team: "DeWitt"},
+    {place: 42, name: "Andrew Fugazzi", grade: 12, time: "17:48.05", team: "Okemos"},
+    {place: 43, name: "Ian Goodrich", grade: 12, time: "17:52.49", team: "DeWitt"},
+    {place: 44, name: "Thomas (TJ) Conley", grade: 11, time: "17:56.31", team: "Ann Arbor Huron"},
+    {place: 45, name: "William VanHaaften", grade: 10, time: "17:56.65", team: "Saline"},
+    {place: 46, name: "William Rosales", grade: 12, time: "17:56.93", team: "Saline"},
+    {place: 47, name: "Zeke Lafferty", grade: 11, time: "17:57.73", team: "Ann Arbor Skyline"},
+    {place: 48, name: "Finley Markle", grade: 12, time: "18:00.76", team: "Okemos"},
+    {place: 49, name: "Jackson Gast", grade: 11, time: "18:04.71", team: "East Lansing"},
+    {place: 50, name: "Aiden Marple", grade: 11, time: "18:05.42", team: "DeWitt"},
+    {place: 51, name: "Oskar MacArthur", grade: 9, time: "18:06.00", team: "Ann Arbor Skyline"},
+    {place: 52, name: "Landon Heikka", grade: 11, time: "18:08.35", team: "Holly"},
+    {place: 53, name: "Jaylen Wildman", grade: 12, time: "18:16.43", team: "Flushing"},
+    {place: 54, name: "Martin Gehrke", grade: 9, time: "18:17.76", team: "Ann Arbor Skyline"},
+    {place: 55, name: "Braylon Lenneman", grade: 11, time: "18:18.44", team: "DeWitt"},
+    {place: 56, name: "Parker Razelun", grade: 12, time: "18:19.01", team: "Ann Arbor Skyline"},
+    {place: 57, name: "Felix Spitz", grade: 10, time: "18:21.00", team: "Lansing Everett"},
+    {place: 58, name: "Gustaf Finn", grade: 11, time: "18:22.78", team: "Ann Arbor Skyline"},
+    {place: 59, name: "Will Chelotti", grade: 10, time: "18:23.51", team: "DeWitt"},
+    {place: 60, name: "Henry Golembiewski", grade: 9, time: "18:24.67", team: "Fenton"},
+    {place: 61, name: "Ian Smith", grade: 12, time: "18:25.02", team: "Holly"},
+    {place: 62, name: "Soren Stone-Palmquist", grade: 12, time: "18:38.90", team: "Ann Arbor Huron"},
+    {place: 63, name: "Zac Brown", grade: 11, time: "18:43.10", team: "Holly"},
+    {place: 64, name: "Alejandro Nagy", grade: 9, time: "18:45.41", team: "East Lansing"},
+    {place: 65, name: "Tyler Ford", grade: 11, time: "18:46.44", team: "Okemos"},
+    {place: 66, name: "Jackson Martin", grade: 10, time: "18:52.25", team: "Fenton"},
+    {place: 67, name: "Langston Waite", grade: 9, time: "18:53.71", team: "East Lansing"},
+    {place: 68, name: "Justin Perantoni", grade: 12, time: "18:57.67", team: "Fenton"},
+    {place: 69, name: "Aaron Ostrowski", grade: 12, time: "18:58.65", team: "East Lansing"},
+    {place: 70, name: "Ben Panter", grade: 10, time: "18:59.39", team: "Fenton"},
+    {place: 71, name: "Bobby Wilson", grade: 12, time: "19:00.09", team: "Okemos"},
+    {place: 72, name: "CJ Shilling", grade: 9, time: "19:03.18", team: "Flushing"},
+    {place: 73, name: "Collin McMillian", grade: 12, time: "19:03.34", team: "Holly"},
+    {place: 74, name: "Grant Lapham", grade: 10, time: "19:04.74", team: "Okemos"},
+    {place: 75, name: "Abram Larsen", grade: 9, time: "19:06.39", team: "Fenton"},
+    {place: 76, name: "Toby Regulinski", grade: 9, time: "19:17.10", team: "East Lansing"},
+    {place: 77, name: "Zachary Panter", grade: 9, time: "19:28.45", team: "Fenton"},
+    {place: 78, name: "Thomas Halligan", grade: 10, time: "19:42.48", team: "Holly"},
+    {place: 79, name: "Ty Inglis", grade: 9, time: "19:48.53", team: "DeWitt"},
+    {place: 80, name: "Simon Van Wyk", grade: 12, time: "19:55.97", team: "East Lansing"},
+    {place: 81, name: "Jackson Defina", grade: 10, time: "20:00.32", team: "Fenton"},
+    {place: 82, name: "Jonah Gray", grade: 9, time: "20:22.98", team: "East Lansing"},
+    {place: 83, name: "Elijah Swift", grade: 12, time: "20:23.42", team: "Lansing Everett"},
+    {place: 84, name: "John Wilson", grade: 10, time: "20:28.61", team: "Flushing"},
+    {place: 85, name: "Ayven Evancho", grade: 10, time: "20:30.49", team: "Flushing"},
+    {place: 86, name: "Jibrael Al-Shinnawi", grade: 12, time: "20:32.01", team: "Lansing Everett"},
+    {place: 87, name: "Garrison Angliss", grade: 12, time: "20:33.28", team: "Flushing"},
+    {place: 88, name: "Luke Battaglia", grade: 9, time: "20:47.43", team: "Fenton"},
+    {place: 89, name: "Jeremiah Delagarza", grade: 10, time: "21:09.22", team: "Lansing Everett"},
+    {place: 90, name: "Abdel Youssouf", grade: 11, time: "21:12.40", team: "Lansing Everett"},
+    {place: 91, name: "Weston Buchanan", grade: 12, time: "21:51.51", team: "Flushing"},
+    {place: 92, name: "Christopher Seymour", grade: 12, time: "22:26.67", team: "Lansing Everett"},
+    {place: 93, name: "Aaron Esquivel", grade: 12, time: "22:30.30", team: "Lansing Everett"},
+    {place: 94, name: "Nolan Prevo", grade: 12, time: "22:45.82", team: "Lansing Everett"},
+    {place: 95, name: "Isaac Armbruster", grade: 10, time: "23:43.23", team: "Lansing Everett"},
+    {place: 96, name: "Emeer Bush", grade: 12, time: "23:52.19", team: "Lansing Everett"}
+];
+
+        function populateTables() {
+            const teamTable = document.getElementById('teamResults');
+            const individualTable = document.getElementById('individualResults');
+
+            teamResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.team}</td>
+                    <td>${result.score}</td>
+                `;
+                teamTable.appendChild(row);
+            });
+
+            individualResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.place}</td>
+                    <td>${result.name}</td>
+                    <td>${result.grade}</td>
+                    <td>${result.time}</td>
+                    <td>${result.team}</td>
+                `;
+                individualTable.appendChild(row);
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const isVisible = text.includes(searchTerm);
+                row.style.display = isVisible ? '' : 'none';
+                if (isVisible) visibleCount++;
+            });
+
+            const searchResults = document.getElementById('searchResults');
+            if (searchTerm) {
+                searchResults.textContent = `Found ${visibleCount} matching results`;
+            } else {
+                searchResults.textContent = '';
+            }
+        });
+
+        populateTables();
+    </script>
+</body>
+</html>
