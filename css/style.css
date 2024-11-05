@@ -1,0 +1,189 @@
+@import 'reset.css';
+
+/* Color scheme and accessibility support */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0039a6;
+    --card-background: #f8f9fa;
+    --card-hover: #f1f3f5;
+    --border-color: #dee2e6;
+    --label-color: #495057;
+    --header-background: #f1f3f5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1f2e;
+        --text-color: #ffffff;
+        --link-color: #74a9ff;
+        --card-background: #2d3748;
+        --card-hover: #3a4a63;
+        --border-color: #4a5568;
+        --label-color: #a0aec0;
+        --header-background: #2d3748;
+    }
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Skip link for accessibility */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1rem;
+    background-color: var(--link-color);
+    color: white;
+}
+
+.skip-to-main:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Season info banner */
+.season-info {
+    background-color: var(--header-background);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Meet grid layout */
+.meets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Meet card styles */
+.meet-card {
+    display: block;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+    .meet-card {
+        transition: transform 0.2s ease-out;
+    }
+}
+
+.meet-card:hover,
+.meet-card:focus {
+    background-color: var(--card-hover);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--link-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .meet-card:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.meet-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--link-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Meet details section */
+.meet-details {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.meet-stat {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--label-color);
+}
+
+/* Table styles */
+.results-container {
+    overflow-x: auto;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--header-background);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Navigation styles */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--header-background);
+    border-radius: 0.5rem;
+}
+
+.nav-button {
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    color: var(--link-color);
+    font-weight: 500;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+    background-color: var(--card-hover);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--link-color);
+}
+
+.nav-button.active {
+    background-color: var(--link-color);
+    color: white;
+}
