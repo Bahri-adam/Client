@@ -1,0 +1,175 @@
+/* Base styles - mobile first approach */
+:root {
+  --primary-text: #333;
+  --secondary-text: #666;
+  --background: #fff;
+  --card-bg: #f5f5f5;
+  --accent: #0066cc;
+  --border: #ddd;
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-text: #fff;
+    --secondary-text: #ccc;
+    --background: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --accent: #66b3ff;
+    --border: #404040;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--background);
+  color: var(--primary-text);
+}
+
+.container {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+/* Season info styles */
+.season-info {
+  text-align: center;
+  padding: 0.5rem;
+  background: var(--card-bg);
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* Meet grid layout */
+.meets-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+/* For tablets and up - using min-width for mobile-first */
+@media screen and (min-width: 768px) {
+  .meets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1024px) {
+  .meets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Meet card styles */
+.meet-card {
+  display: block;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--primary-text);
+}
+
+.meet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Meet details styles */
+.meet-details {
+  margin-top: 1rem;
+}
+
+.meet-stat {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  color: var(--secondary-text);
+}
+
+.stat-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Navigation styles */
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--primary-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-button.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Results table styles */
+.results-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--card-bg);
+  font-weight: 600;
+}
+
+/* Accessibility focus styles */
+:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Search results styles */
+.results-count {
+  margin: 1rem 0;
+  color: var(--secondary-text);
+}
+
+/* Section styles */
+.section {
+  margin: 2rem 0;
+}
+
+/* Loading state styles */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--secondary-text);
+}
