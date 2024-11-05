@@ -4,183 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross Country Meet Results</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1a1f2e;
-            --secondary-color: #2563eb;
-            --background-color: #0f172a;
-            --text-color: #ffffff;
-            --border-color: #334155;
-            --highlight-color: #1e293b;
-            --card-background: #1e40af;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--primary-color);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .meets-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        .meet-card {
-            background-color: var(--card-background);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: transform 0.2s ease;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-        .meet-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .meet-card h2 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .meet-details {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .meet-stat {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stat-label {
-            color: #94a3b8;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .meets-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .season-info {
-            text-align: center;
-            color: #94a3b8;
-            margin-bottom: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Cross Country Meet Results</h1>
-            <div class="season-info">2024 Season</div>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Cross Country Meet Results</h1>
 
-    <main class="container">
-        <div class="meets-grid">
+        <div class="season-info">
+            2024 Season
+        </div>
+
+        <main class="meets-grid">
+            <!-- Early Bird Open Card -->
             <a href="early-bird.html" class="meet-card">
                 <h2>Early Bird Open</h2>
                 <div class="meet-details">
                     <div class="meet-stat">
                         <span class="stat-label">Date:</span>
-                        <span>Thu Aug 29 2024</span>
+                        Thu Aug 29 2024
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Teams:</span>
-                        <span>18</span>
+                        18
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Runners:</span>
-                        <span>303</span>
+                        303
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Winner:</span>
-                        <span>Livonia Churchill (95)</span>
+                        Livonia Churchill (95)
                     </div>
                 </div>
             </a>
 
+            <!-- Bath Invitational Card -->
             <a href="bath-invitational.html" class="meet-card">
                 <h2>Bath Invitational</h2>
                 <div class="meet-details">
                     <div class="meet-stat">
                         <span class="stat-label">Date:</span>
-                        <span>Sat Sep 7 2024</span>
+                        Sat Sep 7 2024
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Teams:</span>
-                        <span>11</span>
+                        11
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Runners:</span>
-                        <span>96</span>
+                        96
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Winner:</span>
-                        <span>Chuck Block Timing (20)</span>
+                        Chuck Block Timing (20)
                     </div>
                 </div>
             </a>
 
-            <a href="holly-duane.html" class="meet-card">  
+            <!-- Holly-Duane Festival Card -->
+            <a href="holly-duane.html" class="meet-card">
                 <h2>Holly-Duane Festival</h2>
                 <div class="meet-details">
                     <div class="meet-stat">
                         <span class="stat-label">Date:</span>
-                        <span>Sat Sep 14 2024</span>
+                        Sat Sep 14 2024
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Teams:</span>
-                        <span>24</span>
+                        24
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Runners:</span>
-                        <span>157</span>
+                        157
                     </div>
                     <div class="meet-stat">
                         <span class="stat-label">Winner:</span>
-                        <span>Holly (79)</span>
+                        Holly (79)
                     </div>
                 </div>
             </a>
-        </div>
-    </main>
+        </main>
+    </div>
+
+    <!-- Add search functionality -->
+    <script>
+        // Search functionality can be added here if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any JavaScript functionality here
+        });
+    </script>
 </body>
 </html>
