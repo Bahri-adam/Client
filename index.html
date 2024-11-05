@@ -13,38 +13,64 @@
         <div class="season-info">
             2024 Season
         </div>
-
-        <div id="meets-grid" class="meets-grid">
-            <!-- Meet cards will be inserted here -->
-        </div>
     </div>
 
-    <script src="meet-utils.js"></script>
-    <script>
-        // Load and process all meet data
-        async function loadMeetData() {
-            try {
-                const meetFiles = [
-                    '37th_Early_Bird_Open_Mens_5000_Meters_HS_Open_5K_24.csv',
-                    'Bret_Clements_Bath_Invitational_Mens_5000_Meters_Class_1_24.csv',
-                    '56th_Holly-Duane_Raffin_Festival_of_Races_Mens_5000_Meters_D1_Boys_24.csv'
-                ];
+    <div class="container" role="main">
+        <div class="meets-grid">
+            <a href="early-bird.html" class="meet-card">
+                <h2>Early Bird Open</h2>
+                <div class="meet-details">
+                    <div class="meet-stat">
+                        <span class="stat-label">Date:</span> Thu Aug 29 2024
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Teams:</span> 18
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Runners:</span> 303
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Winner:</span> Livonia Churchill (95)
+                    </div>
+                </div>
+            </a>
 
-                const meetData = await Promise.all(meetFiles.map(async filename => {
-                    const response = await fetch(filename);
-                    const content = await response.text();
-                    return { filename: filename.replace('.csv', '.html'), content };
-                }));
+            <a href="bath-invitational.html" class="meet-card">
+                <h2>Bath Invitational</h2>
+                <div class="meet-details">
+                    <div class="meet-stat">
+                        <span class="stat-label">Date:</span> Sat Sep 7 2024
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Teams:</span> 11
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Runners:</span> 96
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Winner:</span> Chuck Block Timing (20)
+                    </div>
+                </div>
+            </a>
 
-                const meetsGrid = document.getElementById('meets-grid');
-                meetsGrid.innerHTML = generateMeetCards(meetData);
-            } catch (error) {
-                console.error('Error loading meet data:', error);
-            }
-        }
-
-        // Load data when page loads
-        document.addEventListener('DOMContentLoaded', loadMeetData);
-    </script>
+            <a href="holly-duane.html" class="meet-card">
+                <h2>Holly-Duane Festival</h2>
+                <div class="meet-details">
+                    <div class="meet-stat">
+                        <span class="stat-label">Date:</span> Sat Sep 14 2024
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Teams:</span> 24
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Runners:</span> 157
+                    </div>
+                    <div class="meet-stat">
+                        <span class="stat-label">Winner:</span> Holly (79)
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
